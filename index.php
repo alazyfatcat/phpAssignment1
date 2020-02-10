@@ -49,7 +49,7 @@
         ?>
 
     </fieldset>
-    <button class="offset-md-2 btn btn-primary">Find</button>
+    <button class="offset-md-2 btn btn-success">Find</button>
 
 </form>
 </body>
