@@ -5,7 +5,8 @@
     <title>Online Music Tracker</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body> 
+<body>
+<h1>Music Tracker</h1>
 <form method="post" action="save-music.php">
     <fieldset>
         <label for="song" class="col-md-2">Song: </label>
@@ -29,25 +30,25 @@
     </fieldset>
     <fieldset>
         <label name ="genres" class="col-md-2" required>Genres: </label>
+        <?php
+        // connect
+        $db = new PDO( 'mysql:host=172.31.22.43;dbname=Quoc_Hung200423359',  'Quoc_Hung200423359', 'UZnXmFGtnk');
+
+        $sql = "SELECT genres From dropdownlist";
+        $cmd = $db->prepare($sql);
+        $cmd->execute();
+        $dropdown = $cmd->fetchAll();
+
+        //create  html list
+        echo '<select name = "genres" required>';
+        //echo '<option>' . 'Select Genres' . '</option>';
+        //drop down
+        foreach($dropdown as $value) {
+            echo '<option value = "' . $value ['genres'] . '">' . $value ['genres'] . '</option>';}
+        echo '</select>';
+        ?>
+
     </fieldset>
-    <?php
-    // connect
-    $db = new PDO( 'mysql:host=172.31.22.43;dbname=Quoc_Hung200423359',  'Quoc_Hung200423359', 'UZnXmFGtnk');
-
-    $sql = "SELECT genres From dropdownlist";
-    $cmd = $db->prepare($sql);
-    $cmd->execute();
-    $dropdown = $cmd->fetchAll();
-
-    //create  html list
-    echo '<select name = "genres" required>';
-    //echo '<option>' . 'Select Genres' . '</option>';
-    //drop down
-    foreach($dropdown as $value) {
-        echo '<option value = "' . $value ['genres'] . '">' . $value ['genres'] . '</option>';}
-    echo '</select>';
-    ?>
-
     <button class="offset-md-2 btn btn-primary">Find</button>
 
 </form>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Save Input</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 
@@ -82,7 +83,7 @@ $cmd->execute();
 
 // disconnect
 $db = null;
-echo'Musics saved';
+echo'<h1 class="label label-success">Input is successfully saved</h1>';
 ?>
 
 </body>
