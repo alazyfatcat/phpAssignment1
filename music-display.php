@@ -18,7 +18,7 @@ $cmd->execute();
 $inputs = $cmd->fetchAll();
 
 // start table
-echo '<table class="table table-striped table-hover"><thead><th>Song</th><th>Album</th><th>Genres</th><th>Awards</th><th>Ranking</th></thead>';
+echo '<table class="table table-striped table-hover table-dark"><thead><th>Song</th><th>Album</th><th>Genres</th><th>Awards</th><th>Ranking</th></thead>';
 
 // loop through data and display the results
 foreach ($inputs as $value) {
