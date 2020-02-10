@@ -16,8 +16,9 @@ $ranking = $_POST['ranking'];
 
 //validate inputs
 $ok = true;
-if (empty($song)) {
+if (empty($song)) { $ok = false;
     echo'Name of the song is required<br />';
+
 }
 elseif (strlen($song) > 100) {
     echo'Name of the song must be 100 characters or less<br /> ';
@@ -28,11 +29,12 @@ if (empty($album)) {
     echo'Name of the album is required<br />';
 }
 elseif (strlen($album) > 100) {
-    echo'Name of the song must be 100 characters or less<br /> ';
+    echo'Name of the album must be 100 characters or less<br /> ';
     $ok = false;
 }
 
-if( 0 != $_POST['genres'] ) {
+// If we use "Choose the genres" so set it > 0. But we need to use JS on client validation
+if( $_POST['genres'] > -1 ) {
     $genres = $_POST['genres'];
 }
 else {
@@ -42,12 +44,13 @@ else {
 
 if (empty($awards)) {
     echo'Name of the award is required<br />';
+    $ok = false;
 }
 elseif (strlen($awards) > 100) {
     echo'Name of the award must be 100 characters or less<br /> ';
     $ok = false;
 }
-
+If (!$ok) return;
 if (!empty($ranking)){
     if (is_integer($ranking)) {
         echo 'Ranking must be a number 0 or higher<br />';
@@ -58,6 +61,7 @@ if (!empty($ranking)){
         $ok = false;
     }
 }
+If (!$ok) return;
 
 // connect
 $db = new PDO( 'mysql:host=172.31.22.43;dbname=Quoc_Hung200423359',  'Quoc_Hung200423359', 'UZnXmFGtnk');
