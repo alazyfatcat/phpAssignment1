@@ -10,23 +10,23 @@
 <form method="post" action="save-music.php">
     <fieldset>
         <label for="song" class="col-md-2">Song: </label>
-        <input name="song" id="song" required maxlength="200" />
+        <input name="song" id="song" class="form-control" required maxlength="200" />
     </fieldset>
     <fieldset>
         <label for="album" class="col-md-2">Album: </label>
-        <input name="album" id="album" required maxlength="200" />
+        <input name="album" id="album" class="form-control" required maxlength="200" />
     </fieldset>      
     <fieldset>
         <label for="awards" class="col-md-2">Awards: </label>
-        <input name="awards" id="awards"  required />
+        <input name="awards" id="awards" class="form-control" required />
     </fieldset>
     <fieldset>
         <label for="artist" class="col-md-2">Artist: </label>
-        <input name="artist" id="artist" required />
+        <input name="artist" id="artist" class="form-control" required />
     </fieldset>
     <fieldset>
         <label name="ranking" class="col-md-2">Ranking: </label>
-        <input name="ranking" id="ranking" type="number" required />
+        <input name="ranking" id="ranking" type="number" class="form-control" required />
     </fieldset>
     <fieldset>
         <label name ="genres" class="col-md-2" required>Genres: </label>
