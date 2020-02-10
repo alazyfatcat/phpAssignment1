@@ -84,6 +84,7 @@ $cmd->execute();
 // disconnect
 $db = null;
 echo'<h1 class="label label-success">Input is successfully saved</h1>';
+echo'<a href="music-display.php">Click here to see the list</a>';
 ?>
 
 </body>
